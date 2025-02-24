@@ -9,7 +9,7 @@ CREATE TABLE Farmers (
 );
 INSERT INTO Farmers (name, phone, location) 
 VALUES ('Ravi Kumar', '9876543210', 'Andhra Pradesh'),
-       ('Meena Devi', '8765432109', 'Tamil Nadu');
+       ('Meena Devi', '8765432119', 'Tamil Nadu');
        SELECT * FROM Farmers;
 
 CREATE TABLE Crops (
