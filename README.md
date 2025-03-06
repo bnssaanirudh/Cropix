@@ -9,16 +9,16 @@ Cropix is an interactive and dynamic web platform designed to streamline the agr
 - 🔒 **Secure Transactions**: Ensures safe and transparent payments.
 
 ## 🛠️ Tech Stack
-- **Frontend**: React.js, Tailwind CSS
+- **Frontend**: HTML, Tailwind CSS
 - **Backend**: Node.js, Express.js
-- **Database**: MongoDB
+- **Database**: SQL
 - **Authentication**: JWT (JSON Web Tokens)
 
 ## 📦 Project Structure
 ```
 Cropix/
 │── backend/       # Node.js backend
-│── frontend/      # React.js frontend
+│── frontend/      # HTML frontend
 │── database/      # Database setup & models
 │── docs/          # Documentation & resources
 └── README.md      # Project documentation
