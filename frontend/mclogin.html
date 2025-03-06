@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Market Coordinator Login - Cropix</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="/backend/mclogin.js"></script>
+</head>
+<body class="flex items-center justify-center min-h-screen bg-gray-500">
+
+    <div class="bg-gray-800 p-8 rounded-xl shadow-lg w-full max-w-md">
+        <h2 class="text-white text-3xl font-bold text-center">Market Coordinator Login</h2>
+        <p class="text-gray-400 text-center mt-2">Login to manage the market operations</p>
+
+        <form id="mcLoginForm" action="#" method="POST" class="mt-6">
+            <div class="mb-4">
+                <label for="email" class="text-gray-300 text-sm">Email</label>
+                <input type="email" id="email" name="email" required
+                    class="w-full mt-1 px-4 py-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:ring focus:ring-blue-500 outline-none">
+            </div>
+
+            <div class="mb-4">
+                <label for="password" class="text-gray-300 text-sm">Password</label>
+                <input type="password" id="password" name="password" required
+                    class="w-full mt-1 px-4 py-2 rounded-lg bg-gray-700 text-white border border-gray-600 focus:ring focus:ring-blue-500 outline-none">
+            </div>
+
+            <div class="flex items-center justify-between text-sm text-gray-400">
+                <label class="flex items-center space-x-2">
+                    <input type="checkbox" class="accent-blue-500">
+                    <span>Remember me</span>
+                </label>
+                <a href="#" class="text-blue-400 hover:underline">Forgot password?</a>
+            </div>
+
+            <button type="submit"
+                class="w-full bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 mt-6 rounded-lg transition duration-200">
+                Login
+            </button>
+        </form>
+
+        <p class="text-gray-400 text-center mt-4">
+            Don't have an account?
+            <a href="/frontend/signup.html" class="text-blue-400 hover:underline">Sign up</a>
+        </p>
+    </div>
+
+
+</body>
+
+</html>

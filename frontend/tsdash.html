@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Transport Dashboard</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-100 min-h-screen">
+    <nav class="bg-yellow-500 p-4 shadow-lg">
+        <h1 class="text-white text-2xl font-bold text-center">Transport Service Dashboard</h1>
+    </nav>
+
+    <div class="container mx-auto mt-6 p-6 bg-white shadow-lg rounded-lg">
+        <h2 class="text-xl font-bold text-gray-700">Pending Transport Requests</h2>
+        <div id="requestsList" class="mt-4 space-y-4">
+            <!-- Requests will be dynamically added here -->
+        </div>
+    </div>
+
+    <div class="container mx-auto mt-6 p-6 bg-white shadow-lg rounded-lg">
+        <h2 class="text-xl font-bold text-gray-700">Create Your Own Transport Route</h2>
+        <form id="routeForm" class="mt-4 space-y-4">
+            <input type="text" id="route" placeholder="Enter Route" class="w-full p-2 border rounded-lg">
+            <input type="number" id="price" placeholder="Enter Price" class="w-full p-2 border rounded-lg">
+            <select id="vehicleType" class="w-full p-2 border rounded-lg">
+                <option value="Truck">Truck</option>
+                <option value="Van">Van</option>
+                <option value="Bike">Bike</option>
+            </select>
+            <input type="number" id="capacity" placeholder="Enter Capacity (kg)" class="w-full p-2 border rounded-lg">
+            <button type="submit" class="bg-yellow-500 hover:bg-yellow-600 text-white py-2 px-4 rounded-lg">Submit Route</button>
+        </form>
+    </div>
+
+    <script src="/backend/transport_dashboard.js"></script>
+</body>
+</html>
