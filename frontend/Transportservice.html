@@ -1,127 +1,132 @@
-<html>
+<!DOCTYPE html>
+<html lang="en">
   <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
-    />
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cropix - Transport Booking</title>
 
-    <title>Cropix</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
+    <!-- Tailwind CSS -->
     <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+
+    <style>
+      .background-container {
+        background-image: url('../images/cropix6.png'); /* Background Image */
+        background-size: cover;
+        background-position: center;
+        height: 100vh; /* Full viewport height */
+        position: relative;
+      }
+
+      .search-container {
+        position: absolute;
+        top: 15%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: rgba(255, 255, 255, 0.8); /* White background with transparency */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+
+      .results-container {
+        position: absolute;
+        top: 30%;
+        left: 50%;
+        transform: translateX(-50%);
+        width: 80%;
+        max-height: 60vh;
+        overflow-y: auto;
+        background: rgba(255, 255, 255, 0.85); /* Semi-transparent background */
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      }
+      #transportResults
+      {
+        margin-top: 80px;
+      }
+    </style>
   </head>
-  <body>
-    <div class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden" style='font-family: "Public Sans", "Noto Sans", sans-serif;'>
-      <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f3f4f0] px-10 py-3">
-          <div class="flex items-center gap-4 text-[#151811]">
-            <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_6_319)">
-                  <path
-                    d="M8.57829 8.57829C5.52816 11.6284 3.451 15.5145 2.60947 19.7452C1.76794 23.9758 2.19984 28.361 3.85056 32.3462C5.50128 36.3314 8.29667 39.7376 11.8832 42.134C15.4698 44.5305 19.6865 45.8096 24 45.8096C28.3135 45.8096 32.5302 44.5305 36.1168 42.134C39.7033 39.7375 42.4987 36.3314 44.1494 32.3462C45.8002 28.361 46.2321 23.9758 45.3905 19.7452C44.549 15.5145 42.4718 11.6284 39.4217 8.57829L24 24L8.57829 8.57829Z"
-                    fill="currentColor"
-                  ></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_6_319"><rect width="48" height="48" fill="white"></rect></clipPath>
-                </defs>
-              </svg>
-            </div>
-            <h2 class="text-[#151811] text-lg font-bold leading-tight tracking-[-0.015em]">Cropix</h2>
-          </div>
-          
-        </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4">
-              <p class="text-[#151811] tracking-light text-[32px] font-bold leading-tight min-w-72">Book a Transport Service</p>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#151811] text-base font-medium leading-normal pb-2">From</p>
-                <input
-                  placeholder="Enter city or market"
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#151811] focus:outline-0 focus:ring-0 border border-[#e2e5dc] bg-white focus:border-[#e2e5dc] h-14 placeholder:text-[#7b8863] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#151811] text-base font-medium leading-normal pb-2">To</p>
-                <input
-                  placeholder="Enter city or market"
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#151811] focus:outline-0 focus:ring-0 border border-[#e2e5dc] bg-white focus:border-[#e2e5dc] h-14 placeholder:text-[#7b8863] p-[15px] text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <h3 class="text-[#151811] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Available transport options</h3>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-[#7b8863] text-sm font-normal leading-normal">Truck Service</p>
-                    <p class="text-[#151811] text-base font-bold leading-tight">Truck Service</p>
-                    <p class="text-[#7b8863] text-sm font-normal leading-normal">Route: Vellore to Banglore</p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 flex-row-reverse bg-[#f3f4f0] text-[#151811] text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">Book Now</span>
-                  </button>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/fbb05e00-58cc-449e-93b7-a5243c905eab.png");'
-                ></div>
-              </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-[#7b8863] text-sm font-normal leading-normal">Truck Service</p>
-                    <p class="text-[#151811] text-base font-bold leading-tight">Truck Service</p>
-                    <p class="text-[#7b8863] text-sm font-normal leading-normal">Route: Vellore to Banglore</p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 flex-row-reverse bg-[#f3f4f0] text-[#151811] text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">Book Now</span>
-                  </button>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/05937f14-f081-43e1-b9f6-143c2791da1d.png");'
-                ></div>
-              </div>
-            </div>
-            <div class="p-4">
-              <div class="flex items-stretch justify-between gap-4 rounded-xl">
-                <div class="flex flex-[2_2_0px] flex-col gap-4">
-                  <div class="flex flex-col gap-1">
-                    <p class="text-[#7b8863] text-sm font-normal leading-normal">Truck Service</p>
-                    <p class="text-[#151811] text-base font-bold leading-tight">Truck Service</p>
-                    <p class="text-[#7b8863] text-sm font-normal leading-normal">Route: Vellore to Banglore</p>
-                  </div>
-                  <button
-                    class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-8 px-4 flex-row-reverse bg-[#f3f4f0] text-[#151811] text-sm font-medium leading-normal w-fit"
-                  >
-                    <span class="truncate">Book Now</span>
-                  </button>
-                </div>
-                <div
-                  class="w-full bg-center bg-no-repeat aspect-video bg-cover rounded-xl flex-1"
-                  style='background-image: url("https://cdn.usegalileo.ai/sdxl10/d6d0bf3b-cd9c-4a45-9533-1bfc37ade488.png");'
-                ></div>
-              </div>
-            </div>
-          </div>
+  <body class="bg-white font-sans">
+
+    <!-- Background Image Section -->
+    <div class="background-container">
+      <!-- Search Bar -->
+      <div class="search-container text-center">
+        <h1 class="text-2xl font-bold text-gray-800 mb-4">Book a Transport Service</h1>
+        <div class="flex gap-4">
+          <input type="text" id="fromLocation" placeholder="From Location" class="w-1/3 p-3 border rounded-lg" />
+          <input type="text" id="toLocation" placeholder="To Location" class="w-1/3 p-3 border rounded-lg" />
+          <button onclick="searchTransport()" class="bg-blue-600 text-white px-4 py-3 rounded-lg">Search</button>
         </div>
       </div>
+
+      <!-- Transport Results -->
+      <div id="transportResults" class="results-container hidden"></div>
     </div>
+
+    <script>
+      // Sample Transport Data with Images
+      const transportData = [
+        { name: "Arun Kumar", vehicle: "Mini Truck", capacity: "2 Tons", fare: "₹600 per hour", contact: "9876543210", route: "Chennai to Coimbatore" },
+        { name: "Vijay Raj", vehicle: "Tempo Traveller", capacity: "20 Seater", fare: "₹1200 per hour", contact: "8765432109", route: "Madurai to Trichy" },
+        { name: "Ravi Teja", vehicle: "Container Truck", capacity: "12 Tons", fare: "₹1500 per hour", contact: "7654321098", route: "Hyderabad to Vijayawada" },
+        { name: "Surya Narayan", vehicle: "Pickup Van", capacity: "1.5 Tons", fare: "₹450 per hour", contact: "6543210987", route: "Coimbatore to Salem" },
+        { name: "Karthik Raja", vehicle: "Lorry", capacity: "20 Tons", fare: "₹2500 per hour", contact: "9234567890", route: "Chennai to Trichy" },
+        { name: "Ganesh Babu", vehicle: "Mini Truck", capacity: "3 Tons", fare: "₹700 per hour", contact: "9988776655", route: "Madurai to Chennai" },
+        { name: "Ajith Kumar", vehicle: "Tempo Traveller", capacity: "12 Seater", fare: "₹950 per hour", contact: "8877665544", route: "Vellore to Tirupati" },
+        { name: "Suresh Reddy", vehicle: "Open Truck", capacity: "10 Tons", fare: "₹1700 per hour", contact: "7766554433", route: "Vijayawada to Guntur" },
+        { name: "Balaji", vehicle: "Pickup Van", capacity: "1 Ton", fare: "₹400 per hour", contact: "6655443322", route: "Coimbatore to Erode" },
+        { name: "Mohan Prasad", vehicle: "Tanker Truck", capacity: "15 Tons", fare: "₹2200 per hour", contact: "5544332211", route: "Hyderabad to Nellore" },
+        { name: "Prabhu Deva", vehicle: "Mini Truck", capacity: "2.5 Tons", fare: "₹750 per hour", contact: "4433221100", route: "Tirunelveli to Madurai" },
+        { name: "Dinesh Kumar", vehicle: "Tempo Traveller", capacity: "18 Seater", fare: "₹1100 per hour", contact: "3322110099", route: "Chennai to Bangalore" },
+        { name: "Rajesh Varma", vehicle: "Open Truck", capacity: "8 Tons", fare: "₹1600 per hour", contact: "2211009988", route: "Hyderabad to Warangal" },
+        { name: "Vasanth R", vehicle: "Container Truck", capacity: "14 Tons", fare: "₹1800 per hour", contact: "1100998877", route: "Salem to Chennai" },
+        { name: "Manoj Nair", vehicle: "Mini Truck", capacity: "2 Tons", fare: "₹500 per hour", contact: "9998887776", route: "Trichy to Coimbatore" },
+        { name: "Krishna Iyer", vehicle: "Pickup Van", capacity: "1.8 Tons", fare: "₹550 per hour", contact: "8887776665", route: "Chennai to Pondicherry" },
+        { name: "Ramesh Yadav", vehicle: "Lorry", capacity: "25 Tons", fare: "₹2800 per hour", contact: "7776665554", route: "Madurai to Hyderabad" },
+        { name: "Srinivas Rao", vehicle: "Tanker Truck", capacity: "20 Tons", fare: "₹2400 per hour", contact: "6665554443", route: "Guntur to Chennai" },
+        { name: "Shiva", vehicle: "Tempo Traveller", capacity: "15 Seater", fare: "₹900 per hour", contact: "5554443332", route: "Vijayawada to Tirupati" },
+        { name: "Madhavan", vehicle: "Mini Truck", capacity: "3 Tons", fare: "₹650 per hour", contact: "4443332211", route: "Erode to Salem" },
+        { name: "Ravi Shankar", vehicle: "Pickup Van", capacity: "2 Tons", fare: "₹480 per hour", contact: "3332211009", route: "Coimbatore to Bangalore" },
+        { name: "Jagannath", vehicle: "Open Truck", capacity: "9 Tons", fare: "₹1750 per hour", contact: "2211009988", route: "Chennai to Hosur" },
+      ];
+
+      // Function to search transport based on input
+      function searchTransport() {
+        const from = document.getElementById("fromLocation").value.toLowerCase();
+        const to = document.getElementById("toLocation").value.toLowerCase();
+        const resultsContainer = document.getElementById("transportResults");
+
+        resultsContainer.innerHTML = ""; // Clear previous results
+        resultsContainer.classList.remove("hidden"); // Show the results container
+
+        const filteredData = transportData.filter(service =>
+          service.route.toLowerCase().includes(from) && service.route.toLowerCase().includes(to)
+        );
+
+        if (filteredData.length === 0) {
+          resultsContainer.innerHTML = `<p class="text-red-500 text-lg font-semibold text-center">No transport services available for this route.</p>`;
+          return;
+        }
+
+        filteredData.forEach(service => {
+          resultsContainer.innerHTML += `
+            <div class="p-4 border rounded-lg shadow flex items-center  gap-10 bg-white">
+              <img src="../images/cropix4.jpg" alt="${service.vehicle}" class="w-24 h-24 rounded-lg shadow-lg">
+              <div>
+                <h3 class="text-lg font-bold">${service.vehicle}</h3>
+                <p><strong>Driver:</strong> ${service.name}</p>
+                <p><strong>Capacity:</strong> ${service.capacity}</p>
+                <p><strong>Fare:</strong> ${service.fare}</p>
+                <p><strong>Contact:</strong> ${service.contact}</p>
+                <p><strong>Route:</strong> ${service.route}</p>
+              </div>
+            </div>
+          `;
+        });
+      }
+    </script>
+
   </body>
 </html>

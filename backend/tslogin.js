@@ -1,35 +1,16 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const loginForm = document.getElementById("tsLoginForm");
+    document.getElementById("loginForm").addEventListener("submit", function (event) {
+        event.preventDefault(); // Prevent default form submission
 
-    loginForm.addEventListener("submit", function (event) {
-        event.preventDefault(); // Prevent the default form submission
+        // Get input values
+        const email = document.getElementById("email").value;
+        const password = document.getElementById("password").value;
 
-        const email = document.getElementById("email").value.trim();
-        const password = document.getElementById("password").value.trim();
-
-        if (!email || !password) {
-            alert("Please fill in all fields.");
-            return;
+        // Dummy login validation (Replace with actual backend API call)
+        if (email === "admin@example.com" && password === "password123") {
+            window.location.href = "/frontend/tsdash.html"; // Redirect to the dashboard page
+        } else {
+            alert("Invalid credentials. Please try again.");
         }
-
-        // Simulated authentication (replace with actual API call)
-        fetch("/backend/authenticate_transport_service", {
-            method: "POST",
-            headers: { "Content-Type": "application/json" },
-            body: JSON.stringify({ email, password })
-        })
-        .then(response => response.json())
-        .then(data => {
-            if (data.success) {
-                alert("Login successful!");
-                window.location.href = "/frontend/tsdash.html"; // Redirect to dashboard
-            } else {
-                alert("Invalid email or password. Please try again.");
-            }
-        })
-        .catch(error => {
-            console.error("Error during login:", error);
-            alert("An error occurred. Please try again later.");
-        });
     });
 });

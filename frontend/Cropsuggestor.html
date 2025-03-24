@@ -1,146 +1,146 @@
-<html>
-  <head>
-    <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
-    <link
-      rel="stylesheet"
-      as="style"
-      onload="this.rel='stylesheet'"
-      href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900"
-    />
-
-    <title>Cropix</title>
-    <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
-
-    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
-  </head>
-  <body>
-    <div
-      class="relative flex size-full min-h-screen flex-col bg-white group/design-root overflow-x-hidden"
-      style='--checkbox-tick-svg: url(&apos;data:image/svg+xml,%3csvg viewBox=%270 0 16 16%27 fill=%27rgb(19,24,17)%27 xmlns=%27http://www.w3.org/2000/svg%27%3e%3cpath d=%27M12.207 4.793a1 1 0 010 1.414l-5 5a1 1 0 01-1.414 0l-2-2a1 1 0 011.414-1.414L6.5 9.086l4.293-4.293a1 1 0 011.414 0z%27/%3e%3c/svg%3e&apos;); font-family: "Public Sans", "Noto Sans", sans-serif;'
-    >
-      <div class="layout-container flex h-full grow flex-col">
-        <header class="flex items-center justify-between whitespace-nowrap border-b border-solid border-b-[#f2f4f0] px-10 py-3">
-          <div class="flex items-center gap-4 text-[#131811]">
-            <div class="size-4">
-              <svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <g clip-path="url(#clip0_6_330)">
-                  <path
-                    fill-rule="evenodd"
-                    clip-rule="evenodd"
-                    d="M24 0.757355L47.2426 24L24 47.2426L0.757355 24L24 0.757355ZM21 35.7574V12.2426L9.24264 24L21 35.7574Z"
-                    fill="currentColor"
-                  ></path>
-                </g>
-                <defs>
-                  <clipPath id="clip0_6_330"><rect width="48" height="48" fill="white"></rect></clipPath>
-                </defs>
-              </svg>
-            </div>
-            <h2 class="text-[#131811] text-lg font-bold leading-tight tracking-[-0.015em]">Cropix</h2>
-          </div>
-
-        </header>
-        <div class="px-40 flex flex-1 justify-center py-5">
-          <div class="layout-content-container flex flex-col max-w-[960px] flex-1">
-            <div class="flex flex-wrap justify-between gap-3 p-4">
-              <p class="text-[#131811] text-4xl font-black leading-tight tracking-[-0.033em] min-w-72">Find your next crop</p>
-            </div>
-            <div class="flex max-w-[480px] flex-wrap items-end gap-4 px-4 py-3">
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#131811] text-base font-medium leading-normal pb-2">Location</p>
-                <input
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#131811] focus:outline-0 focus:ring-0 border-none bg-[#f2f4f0] focus:border-none h-14 placeholder:text-[#6f8863] p-4 text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-              <label class="flex flex-col min-w-40 flex-1">
-                <p class="text-[#131811] text-base font-medium leading-normal pb-2">Season</p>
-                <input
-                  class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#131811] focus:outline-0 focus:ring-0 border-none bg-[#f2f4f0] focus:border-none h-14 placeholder:text-[#6f8863] p-4 text-base font-normal leading-normal"
-                  value=""
-                />
-              </label>
-            </div>
-            <h3 class="text-[#131811] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Previous crops</h3>
-            <div class="px-4">
-              <label class="flex gap-x-3 py-3 flex-row">
-                <input
-                  type="checkbox"
-                  class="h-5 w-5 rounded border-[#dfe5dc] border-2 bg-transparent text-[#5de619] checked:bg-[#5de619] checked:border-[#5de619] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#dfe5dc] focus:outline-none"
-                />
-                <p class="text-[#131811] text-base font-normal leading-normal">Tomatoes</p>
-              </label>
-              <label class="flex gap-x-3 py-3 flex-row">
-                <input
-                  type="checkbox"
-                  class="h-5 w-5 rounded border-[#dfe5dc] border-2 bg-transparent text-[#5de619] checked:bg-[#5de619] checked:border-[#5de619] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#dfe5dc] focus:outline-none"
-                  checked=""
-                />
-                <p class="text-[#131811] text-base font-normal leading-normal">Strawberries</p>
-              </label>
-              <label class="flex gap-x-3 py-3 flex-row">
-                <input
-                  type="checkbox"
-                  class="h-5 w-5 rounded border-[#dfe5dc] border-2 bg-transparent text-[#5de619] checked:bg-[#5de619] checked:border-[#5de619] checked:bg-[image:--checkbox-tick-svg] focus:ring-0 focus:ring-offset-0 focus:border-[#dfe5dc] focus:outline-none"
-                />
-                <p class="text-[#131811] text-base font-normal leading-normal">Cotton</p>
-              </label>
-            </div>
-            <div class="flex px-4 py-3">
-              <button
-                class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-10 px-4 flex-1 bg-[#5de619] text-[#131811] text-sm font-bold leading-normal tracking-[0.015em]"
-              >
-                <span class="truncate">Search</span>
-              </button>
-            </div>
-            <h3 class="text-[#131811] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Results</h3>
-            <div class="flex gap-4 bg-white px-4 py-3">
-              <div
-                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px]"
-                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/84caa648-ca1d-4508-ab28-b5a4e79a7de2.png");'
-              ></div>
-              <div class="flex flex-1 flex-col justify-center">
-                <p class="text-[#131811] text-base font-medium leading-normal">Kale</p>
-                <p class="text-[#6f8863] text-sm font-normal leading-normal">Estimated yield: 4000 lbs/acre</p>
-                <p class="text-[#6f8863] text-sm font-normal leading-normal">The best crop for winter in Vellore, CA. Estimated market price at harvest 50000 rupees per acre</p>
-              </div>
-            </div>
-            <div class="flex gap-4 bg-white px-4 py-3">
-              <div
-                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px]"
-                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/da73018c-fc3f-4474-98b1-83091eb67a16.png");'
-              ></div>
-              <div class="flex flex-1 flex-col justify-center">
-                <p class="text-[#131811] text-base font-medium leading-normal">Lettuce</p>
-                <p class="text-[#6f8863] text-sm font-normal leading-normal">Estimated yield: 8000 lbs/acre</p>
-                <p class="text-[#6f8863] text-sm font-normal leading-normal">The best crop for winter in Vellore, CA. Estimated market price at harvest 20000 rupees per acre</p>
-              </div>
-            </div>
-            <div class="flex gap-4 bg-white px-4 py-3">
-              <div
-                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px]"
-                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/f8e14ca8-c0ac-4f33-9aab-24f64eab813e.png");'
-              ></div>
-              <div class="flex flex-1 flex-col justify-center">
-                <p class="text-[#131811] text-base font-medium leading-normal">Carrots</p>
-                <p class="text-[#6f8863] text-sm font-normal leading-normal">Estimated yield: 5000 lbs/acre</p>
-                <p class="text-[#6f8863] text-sm font-normal leading-normal">The best crop for winter in Vellore, CA. Estimated market price at harvest 10000 Rupees per acre</p>
-              </div>
-            </div>
-            <div class="flex gap-4 bg-white px-4 py-3">
-              <div
-                class="bg-center bg-no-repeat aspect-square bg-cover rounded-lg size-[70px]"
-                style='background-image: url("https://cdn.usegalileo.ai/sdxl10/bccd1a7d-6642-4aaf-a1af-4d7f80e734f7.png");'
-              ></div>
-              <div class="flex flex-1 flex-col justify-center">
-                <p class="text-[#131811] text-base font-medium leading-normal">Spinach</p>
-                <p class="text-[#6f8863] text-sm font-normal leading-normal">Estimated yield: 3000 lbs/acre</p>
-                <p class="text-[#6f8863] text-sm font-normal leading-normal">The best crop for winter in Vellore, CA. Estimated market price at harvest 5000 Rupees per acre</p>
-              </div>
-            </div>
-          </div>
-        </div>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin="" />
+  <link rel="stylesheet" as="style" onload="this.rel='stylesheet'" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900&amp;family=Public+Sans%3Awght%40400%3B500%3B700%3B900" />
+  <title>Cropix</title>
+  <link rel="icon" type="image/x-icon" href="data:image/x-icon;base64," />
+  <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+  <style>
+    html
+    {
+      height: 100%;
+    }
+    .crop
+    {
+      display: flex;
+      flex-direction: row;
+      height: 100%;
+      border: none;
+    }
+    .crop img
+    {
+      height: 100%;
+      width: 80%;
+    }
+  </style>
+</head>
+<body class="bg-white font-sans">
+  <div class="crop">
+    <div class="container mx-auto p-6">
+      <h1 class="text-3xl font-bold text-[#131811]">Find Your Next Crop</h1>
+      <!-- Inputs -->
+      <div class="flex gap-4 my-4">
+        <input id="location" type="text" placeholder="Location" class="p-2 border rounded-lg flex-1" />
+        <input id="season" type="text" placeholder="Season" class="p-2 border rounded-lg flex-1" />
       </div>
+  
+      <!-- Previous Crops -->
+      <h3 class="text-lg font-bold text-[#131811]">Previous Crops</h3>
+      <div class="flex flex-wrap gap-4 my-3">
+        <label><input type="checkbox" value="Tomatoes" class="prev-crop" /> Tomatoes</label>
+        <label><input type="checkbox" value="Strawberries" class="prev-crop" /> Strawberries</label>
+        <label><input type="checkbox" value="Cotton" class="prev-crop" /> Cotton</label>
+      </div>
+  
+      <button onclick="findCrops()" class="bg-green-500 text-white px-4 py-2 rounded-lg">Search</button>
+  
+      <!-- Results -->
+      <h3 class="text-lg font-bold text-[#131811] mt-6">Results</h3>
+      <div id="results" class="mt-4"></div>
     </div>
-  </body>
+    <img src="../images/cropix3.jpg" alt="crop_image" width="25%">
+  </div>
+</body>
 </html>
+<script>
+  const cropData = [
+{ name: "Kale", season: "Winter", location: "Vellore", prevCrops: ["Tomatoes"], yield: "4000 lbs/acre", price: "50,000 rupees" },
+{ name: "Lettuce", season: "Winter", location: "Vellore", prevCrops: ["Strawberries"], yield: "8000 lbs/acre", price: "20,000 rupees" },
+{ name: "Carrots", season: "Winter", location: "Vellore", prevCrops: ["Cotton"], yield: "5000 lbs/acre", price: "10,000 rupees" },
+
+{ name: "Rice", season: "Monsoon", location: "Thanjavur", prevCrops: ["Groundnut", "Pulses"], yield: "6000 lbs/acre", price: "15,000 rupees" },
+{ name: "Sugarcane", season: "Annual", location: "Cuddalore", prevCrops: ["Paddy"], yield: "7000 lbs/acre", price: "40,000 rupees" },
+{ name: "Groundnut", season: "Summer", location: "Salem", prevCrops: ["Maize"], yield: "4500 lbs/acre", price: "25,000 rupees" },
+
+{ name: "Maize", season: "Kharif", location: "Coimbatore", prevCrops: ["Cotton", "Groundnut"], yield: "5000 lbs/acre", price: "18,000 rupees" },
+{ name: "Banana", season: "Annual", location: "Madurai", prevCrops: ["Rice"], yield: "9000 lbs/acre", price: "60,000 rupees" },
+{ name: "Mango", season: "Summer", location: "Krishnagiri", prevCrops: ["Millets"], yield: "3000 lbs/acre", price: "1,20,000 rupees" },
+
+{ name: "Chillies", season: "Rabi", location: "Guntur", prevCrops: ["Cotton", "Maize"], yield: "4000 lbs/acre", price: "75,000 rupees" },
+{ name: "Turmeric", season: "Annual", location: "Erode", prevCrops: ["Banana"], yield: "6000 lbs/acre", price: "1,50,000 rupees" },
+{ name: "Onions", season: "Winter", location: "Perambalur", prevCrops: ["Maize"], yield: "5500 lbs/acre", price: "35,000 rupees" },
+
+{ name: "Cotton", season: "Kharif", location: "Tiruppur", prevCrops: ["Groundnut"], yield: "4000 lbs/acre", price: "55,000 rupees" },
+{ name: "Paddy", season: "Monsoon", location: "Kanchipuram", prevCrops: ["Blackgram"], yield: "7500 lbs/acre", price: "22,000 rupees" },
+{ name: "Blackgram", season: "Winter", location: "Ariyalur", prevCrops: ["Maize"], yield: "3200 lbs/acre", price: "19,000 rupees" },
+
+{ name: "Jowar", season: "Rabi", location: "Nellore", prevCrops: ["Green Gram"], yield: "3500 lbs/acre", price: "14,000 rupees" },
+{ name: "Sunflower", season: "Summer", location: "Kurnool", prevCrops: ["Chillies"], yield: "4500 lbs/acre", price: "38,000 rupees" },
+{ name: "Tobacco", season: "Winter", location: "Prakasam", prevCrops: ["Blackgram"], yield: "5000 lbs/acre", price: "90,000 rupees" },
+
+{ name: "Papaya", season: "Annual", location: "Tirupati", prevCrops: ["Tomatoes"], yield: "10,000 lbs/acre", price: "85,000 rupees" },
+{ name: "Millets", season: "Kharif", location: "Dharmapuri", prevCrops: ["Paddy"], yield: "5800 lbs/acre", price: "30,000 rupees" },
+{ name: "Sesame", season: "Summer", location: "Ramanathapuram", prevCrops: ["Blackgram"], yield: "4000 lbs/acre", price: "40,000 rupees" },
+
+{ name: "Grapes", season: "Annual", location: "Dindigul", prevCrops: ["Groundnut"], yield: "7500 lbs/acre", price: "1,80,000 rupees" },
+{ name: "Tomatoes", season: "Winter", location: "Hosur", prevCrops: ["Brinjal"], yield: "8500 lbs/acre", price: "25,000 rupees" },
+{ name: "Brinjal", season: "Winter", location: "Chennai", prevCrops: ["Tomatoes"], yield: "6500 lbs/acre", price: "20,000 rupees" },
+
+{ name: "Coconut", season: "Perennial", location: "Pollachi", prevCrops: ["Pulses"], yield: "12,000 nuts/acre", price: "90,000 rupees" },
+{ name: "Cashew", season: "Summer", location: "Nagapattinam", prevCrops: ["Groundnut"], yield: "5000 lbs/acre", price: "1,10,000 rupees" },
+{ name: "Coriander", season: "Winter", location: "Villupuram", prevCrops: ["Maize"], yield: "3000 lbs/acre", price: "15,000 rupees" },
+
+{ name: "Avocado", season: "Annual", location: "Nilgiris", prevCrops: ["Tea"], yield: "8000 lbs/acre", price: "2,00,000 rupees" },
+{ name: "Tea", season: "Annual", location: "Ooty", prevCrops: ["Coffee"], yield: "5000 lbs/acre", price: "75,000 rupees" },
+{ name: "Coffee", season: "Annual", location: "Yercaud", prevCrops: ["Pepper"], yield: "6000 lbs/acre", price: "1,50,000 rupees" },
+
+{ name: "Pepper", season: "Annual", location: "Kodagu", prevCrops: ["Cardamom"], yield: "7000 lbs/acre", price: "1,20,000 rupees" },
+{ name: "Cardamom", season: "Annual", location: "Idukki", prevCrops: ["Arecanut"], yield: "4000 lbs/acre", price: "2,50,000 rupees" },
+{ name: "Arecanut", season: "Annual", location: "Sivaganga", prevCrops: ["Coconut"], yield: "5000 lbs/acre", price: "1,30,000 rupees" },
+{ name: "Rice", season: "Monsoon", location: "Thanjavur", prevCrops: ["Groundnut", "Pulses"], yield: "6000 lbs/acre", price: "15,000 rupees" },
+{ name: "Rice", season: "Winter", location: "Kanchipuram", prevCrops: ["Cotton", "Turmeric"], yield: "5800 lbs/acre", price: "16,500 rupees" },
+{ name: "Wheat", season: "Rabi", location: "Madurai", prevCrops: ["Blackgram"], yield: "4500 lbs/acre", price: "14,000 rupees" },
+{ name: "Millets", season: "Kharif", location: "Dharmapuri", prevCrops: ["Rice"], yield: "5200 lbs/acre", price: "25,000 rupees" },
+{ name: "Jowar", season: "Rabi", location: "Nellore", prevCrops: ["Green Gram"], yield: "3500 lbs/acre", price: "14,000 rupees" },
+{ name: "Barley", season: "Winter", location: "Erode", prevCrops: ["Corn"], yield: "4100 lbs/acre", price: "17,500 rupees" },
+{ name: "Maize", season: "Kharif", location: "Coimbatore", prevCrops: ["Cotton", "Groundnut"], yield: "5000 lbs/acre", price: "18,000 rupees" }
+
+
+];
+
+  function findCrops() {
+    const location = document.getElementById("location").value.trim();
+    const season = document.getElementById("season").value.trim();
+    const selectedCrops = Array.from(document.querySelectorAll(".prev-crop:checked")).map(c => c.value);
+
+    const filteredCrops = cropData.filter(crop =>
+      (!location || crop.location.toLowerCase() === location.toLowerCase()) &&
+      (!season || crop.season.toLowerCase() === season.toLowerCase()) &&
+      selectedCrops.some(pc => crop.prevCrops.includes(pc))
+    );
+
+    displayResults(filteredCrops);
+  }
+
+  function displayResults(crops) {
+    const resultsDiv = document.getElementById("results");
+    resultsDiv.innerHTML = "";
+
+    if (crops.length === 0) {
+      resultsDiv.innerHTML = "<p class='text-red-500'>No matching crops found.</p>";
+      return;
+    }
+
+    crops.forEach(crop => {
+      const cropElement = `
+        <div class="p-4 border rounded-lg my-2 bg-gray-100">
+          <h4 class="font-bold">${crop.name}</h4>
+          <p>Estimated yield: ${crop.yield}</p>
+          <p>Market price: ${crop.price}</p>
+        </div>
+      `;
+      resultsDiv.innerHTML += cropElement;
+    });
+  }
+</script>

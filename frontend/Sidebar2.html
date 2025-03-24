@@ -129,7 +129,7 @@
               <button
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 flex-1 bg-[#f2f4f0] text-[#141811] text-base font-bold leading-normal tracking-[0.015em]"
               >
-                <span class="truncate">Delete Crop</span>
+                <span class="truncate" onclick="fn2(event)">Delete Crop</span>
               </button>
             </div>
             <h3 class="text-[#141811] text-lg font-bold leading-tight tracking-[-0.015em] px-4 pb-2 pt-4">Add Crop</h3>
@@ -147,7 +147,7 @@
                 <input
                   placeholder=""
                   class="form-input flex w-full min-w-0 flex-1 resize-none overflow-hidden rounded-xl text-[#141811] focus:outline-0 focus:ring-0 border border-[#e0e5dc] bg-white focus:border-[#e0e5dc] h-14 placeholder:text-[#758863] p-[15px] text-base font-normal leading-normal"
-                  value=""
+                  value="" 
                 />
               </label>
             </div>
@@ -155,7 +155,7 @@
               <button
                 class="flex min-w-[84px] max-w-[480px] cursor-pointer items-center justify-center overflow-hidden rounded-xl h-12 px-5 flex-1 bg-[#80e619] text-[#141811] text-base font-bold leading-normal tracking-[0.015em]"
               >
-                <span class="truncate">Add Crop</span>
+                <span class="truncate" onclick="fn1(event)">Add Crop</span>
               </button>
             </div>
           </div>
@@ -163,4 +163,18 @@
       </div>
     </div>
   </body>
+  <script>
+    function fn1(event)
+    {
+      event.preventDefault();
+      alert("Crop added sucessfully")
+      window.location.href = "./index.html";
+    }
+    function fn2(event)
+    {
+      event.preventDefault();
+      alert("Crop deleted Successfully")
+      window.location.href = "./index.html";
+    }
+  </script>
 </html>
